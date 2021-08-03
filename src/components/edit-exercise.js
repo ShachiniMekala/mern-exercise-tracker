@@ -24,7 +24,7 @@ export default class EditExercises extends Component {
     
        componentDidMount() {
 
-        axios.get('http://localhost:5000/exercise/'+this.props.match.params.id)
+        axios.get('https://boiling-basin-57168.herokuapp.com/exercise/'+this.props.match.params.id)
           .then(response => {
               this.setState({
                 username: response.data.username,
@@ -37,7 +37,7 @@ export default class EditExercises extends Component {
             console.log(error);
           })
 
-        axios.get('http://localhost:5000/user/')
+        axios.get('https://boiling-basin-57168.herokuapp.com/user/')
           .then(response => {
             if (response.data.length > 0) {
               this.setState({
@@ -88,7 +88,7 @@ export default class EditExercises extends Component {
     
         console.log(exercise);
     
-        axios.post('http://localhost:5000/exercise/update/'+this.props.match.params.id, exercise)
+        axios.post('https://boiling-basin-57168.herokuapp.com/exercise/update/'+this.props.match.params.id, exercise)
            .then(response => this.setState({exercise
           }));
     
