@@ -23,7 +23,7 @@ export default class CreateExercise extends Component {
   }
 
    componentDidMount() {
-    axios.get('https://boiling-basin-57168.herokuapp.com/user/')
+    axios.get('/user/')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -74,7 +74,7 @@ export default class CreateExercise extends Component {
 
     console.log(exercise);
 
-    axios.post('https://boiling-basin-57168.herokuapp.com/exercise/add', exercise)
+    axios.post('/exercise/add', exercise)
        .then(res => console.log(res.data));
 
     window.location = '/';
